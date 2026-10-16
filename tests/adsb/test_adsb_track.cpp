@@ -344,7 +344,7 @@ static void testExpiryAndLimits() {
     for (auto& f : big.frames) bytes += f.hex.capacity() + f.what.capacity();
     for (auto& a : big.aircraft) bytes += sizeof(AdsbAircraft) + a.callsign.capacity() + a.category.capacity() + a.track.capacity() * sizeof(AdsbTrackPoint);
     printf("  a full report is about %zu bytes (%zu aircraft, longest track %zu points)\n", bytes, big.aircraft.size(), big.aircraft.empty() ? 0 : big.aircraft[0].track.size());
-    CHECK(bytes < 100000 && big.aircraft.size() == 128 && big.aircraft[0].track.size() == 30, "report size %zu", bytes);
+    CHECK(bytes < 120000 && big.aircraft.size() == 128 && big.aircraft[0].track.size() == 40, "report size %zu", bytes);
     // messages per second over the last second
     AdsbTracker rate;
     for (int w = 0; w < 8; w++) {

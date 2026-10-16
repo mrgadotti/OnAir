@@ -247,7 +247,7 @@ TxPayloadKind txPayloadKind(const std::string& id) {
     if (id == "dect") return TxPayloadKind::Dect;
     if (id == "cubesat") return TxPayloadKind::CubeSat;
     if (id == "meteor" || id == "goes" || id == "hrpt") return TxPayloadKind::WeatherScene;
-    if (id == "inmc" || id == "aero" || id == "iridium" || id == "orbcomm" || id == "globalstar") return TxPayloadKind::SatScene;
+    if (id == "inmc" || id == "aero" || id == "iridium" || id == "orbcomm" || id == "globalstar" || id == "vdl4") return TxPayloadKind::SatScene;
     if (id == "flarm") return TxPayloadKind::Flarm;
     if (id == "zigbee") return TxPayloadKind::Zigbee;
     if (id == "dji") return TxPayloadKind::Dji;
