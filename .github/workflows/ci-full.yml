@@ -89,4 +89,5 @@ jobs:
         if: runner.os == 'macOS' && matrix.extra == ''
         env:
           MACOSX_DEPLOYMENT_TARGET: "15.0"
+          ONAIR_ALLOW_MISSING_RADIO_LIBS: "1"   # this checks the packaging, not the radios: only release.yml installs all the radio libraries
         run: tools/package/make_dmg.sh

@@ -3,6 +3,11 @@
 // wait for the radio to come back, discovery (a LimeSDR-USB shares 04b4:00f1), the clock / decimation / input choices, and that a known tone
 // comes out of the real-to-complex conversion where it should (HF directly, VHF through the 4.57 MHz IF with the spectrum inverted).
 // What it cannot say: whether a real RX888 MkII answers these requests as the fake does, or delivers its VHF IF where the fake puts it.
+#ifdef _WIN32
+#include <stdlib.h>
+#define setenv(k, v, o) _putenv_s(k, v)
+#define unsetenv(k) _putenv_s(k, "")   // an empty value removes it
+#endif
 #include "../core/src/native_common.h"
 #include "../core/src/native_realddc.h"
 #include "../core/src/rx888_usb.h"
